@@ -10,10 +10,8 @@ class Login extends Component {
   }
 
   async componentDidMount() {
-    // Check if the user is already logged in
     auth.onAuthStateChanged(user => {
       if (user) {
-        // User is logged in, redirect to Home route
         const {history} = this.props
         history.push('/')
       }

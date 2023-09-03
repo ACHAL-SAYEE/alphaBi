@@ -57,6 +57,12 @@ class Home extends Component {
     })
   }
 
+  checkKey = e => {
+    if (e.keyCode === 13) {
+      this.searchGifs()
+    }
+  }
+
   loadNextPage = () => {
     this.setState(
       prevState => ({
@@ -123,6 +129,7 @@ class Home extends Component {
                   placeholder="Article name or keywords"
                   value={searchTerm}
                   onChange={this.handleSearchInputChange}
+                  onKeyDown={this.checkKey}
                 />
                 <button
                   className="btn"
